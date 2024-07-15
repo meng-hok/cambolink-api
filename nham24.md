@@ -1,7 +1,3 @@
-Certainly! Here's a more polished and professional version of your API interaction steps, formatted for better readability.
-
----
-
 ### Step 1: Get Available Locations
 ```sh
 curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/locations'
@@ -108,6 +104,3 @@ curl 'https://hok-proxy.acetoz.com/mobile/api/v1/coupons/check?coupon_code=hahah
 **Request Parameters:**
 - `coupon_code`: Coupon code to check (e.g., "hahaha").
 
----
-
-Feel free to adjust the content and formatting as needed!
