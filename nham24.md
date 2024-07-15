@@ -12,7 +12,7 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/locations'
 
 ### Step 2: Get Available Trips
 ```sh
-curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips?travel_date=2024-3-23&to_location=Phnom%20Penh&from_location=Poi%20Pet&intf=nham24'
+curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips?travel_date=2024-8-23&to_location=Phnom%20Penh&from_location=Poi%20Pet&intf=nham24'
 ```
 **Request Parameters:**
 - `from_location`: Departure location.
