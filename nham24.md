@@ -49,7 +49,7 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips/66975e901bbcb1
 **Request Parameters:**
 - `from_location`: Departure location.
 - `to_location`: Arrival location.
-- `trip_id`: Departure date.
+- `trip_id`: Trip Id.
 
 **Response:**
 - `_id`: Unique identifier for the document.
