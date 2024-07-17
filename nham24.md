@@ -42,6 +42,37 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips?travel_date=20
       - `B`: Booked/Reserved.
       - `A1, A2...`: Available for booking.
 
+### Step 2.1 (Optional): Get Trip Detail
+```sh
+curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips/66975e901bbcb152fd71e2bf?from_location=Phnom%20Penh&to_location=Poi%20Pet'
+```
+**Request Parameters:**
+- `from_location`: Departure location.
+- `to_location`: Arrival location.
+- `trip_id`: Departure date.
+
+**Response:**
+- `_id`: Unique identifier for the document.
+- `master_id`: Trip parent ID.
+- `travel_info`: Contains information about the travel:
+  - `departure`: Departure location (e.g., "Battombong").
+  - `departure_time`: Time of departure (e.g., "06:30").
+  - `arrival`: Arrival location (e.g., "Phnom Penh-HQ").
+  - `arrival_time`: Time of arrival (e.g., "14:30").
+  - `seat_left`: The number of available seats left (e.g., 40).
+  - `number_of_seat`: The total number of seats (e.g., 36).
+  - `pricing`: Pricing information:
+    - `value`: Price value (e.g., 16).
+    - `currency`: Currency of the price (e.g., "USD").
+  - `vehicle`: Details about the vehicle:
+    - `name`: Name of the vehicle (e.g., "Hyundai_BUS").
+    - `stories`: Contains transportation layout:
+      - `rows`: Number of rows (e.g., 4).
+      - `column`: Number of columns (e.g., 2).
+      - `X`: No Seat.
+      - `B`: Booked/Reserved.
+      - `A1, A2...`: Available for booking.
+
 ### Step 3: Pre-Checkout
 ```sh
 curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/tickets/checkout' \
