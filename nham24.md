@@ -61,6 +61,7 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips/66975e901bbcb1
   - `arrival_time`: Time of arrival (e.g., "14:30").
   - `seat_left`: The number of available seats left (e.g., 40).
   - `number_of_seat`: The total number of seats (e.g., 36).
+  - `gender`: Male or Female.
   - `pricing`: Pricing information:
     - `value`: Price value (e.g., 16).
     - `currency`: Currency of the price (e.g., "USD").
