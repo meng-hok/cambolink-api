@@ -61,7 +61,6 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips/66975e901bbcb1
   - `arrival_time`: Time of arrival (e.g., "14:30").
   - `seat_left`: The number of available seats left (e.g., 40).
   - `number_of_seat`: The total number of seats (e.g., 36).
-  - `gender`: Male or Female.
   - `pricing`: Pricing information:
     - `value`: Price value (e.g., 16).
     - `currency`: Currency of the price (e.g., "USD").
@@ -88,7 +87,8 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/tickets/checkout' \
     "coupon": "",
     "email": "info@cambotra.com",
     "phone_number": "85560123456",
-    "client_name": "Daniel Isaac"
+    "client_name": "Daniel Isaac",
+    "gender" : "Male"
 }'
 ```
 **Request Parameters:**
@@ -101,6 +101,8 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/tickets/checkout' \
 - `email`: Client email.
 - `phone_number`: Client phone number.
 - `client_name`: Client name.
+- `gender`: Male or Female.
+
 
 **Response:**
 - `data`: List of bought tickets.
