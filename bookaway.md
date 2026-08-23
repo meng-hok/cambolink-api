@@ -1,9 +1,13 @@
+```sh
+base url = https://hok-proxy.acetoz.com/mobile/
+```
+
 ### Step 1: Get Available Locations
 ```sh
 curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/locations'
 ```
 **Header Required for All Endpoint:**
-- `x-forward-id = cambolink-website`
+- `x-forward-id = cambolink-website` (When move to production will changed )
 
 **Response:**
 - `_id`: Unique identifier for the document.
