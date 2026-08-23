@@ -1,13 +1,13 @@
 ```sh
 base url = https://hok-proxy.acetoz.com/mobile/
 ```
+**Header Required for All Endpoint:**
+- `x-forward-id = cambolink-website` (When move to production will changed )
 
 ### Step 1: Get Available Locations
 ```sh
 curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/locations'
 ```
-**Header Required for All Endpoint:**
-- `x-forward-id = cambolink-website` (When move to production will changed )
 
 **Response:**
 - `_id`: Unique identifier for the document.
@@ -25,7 +25,7 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips?travel_date=20
 - `from_location`: Departure location.
 - `to_location`: Arrival location.
 - `travel_date`: Departure date.
-- `intf`: Interface identifier (set to "bookaway" for vendor bookaway).
+- `intf`: Interface identifier (set to "mobile" for vendor mobile).
 
 **Response:**
 - `_id`: Unique identifier for the document.
