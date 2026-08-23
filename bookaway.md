@@ -2,6 +2,9 @@
 ```sh
 curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/locations'
 ```
+**Header Required for All Endpoint:**
+- `x-forward-id = cambolink-website`
+
 **Response:**
 - `_id`: Unique identifier for the document.
 - `name`: Name of the location in Khmer.
