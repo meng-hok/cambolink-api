@@ -5,7 +5,7 @@ base url = https://hok-proxy.acetoz.com/mobile/
 - `x-forward-id = cambolink-website` (When move to production will changed )
 
 
-### Step 1: Get Available Locations
+### Step 0: POST Auth
 ```sh
 curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/users/[phone-number,e-mail,username]/sign-in'
 ```
