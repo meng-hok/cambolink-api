@@ -19,6 +19,21 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/users/[phone-number,
 **Response:**
 - `token`: access token.
 
+### Step 0: Register User
+```sh
+curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/users/sign-up'
+```
+
+**Request Parameters:**
+- `first_name`: .
+- `last_name`: .
+- `phone_number`:  .
+- `password`: password.
+- `gender`: gender.
+
+**Response:**
+- `token`: access token.
+
 ### Step 1: Get Available Locations
 ```sh
 curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/locations'
