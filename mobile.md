@@ -8,6 +8,27 @@ curl --location 'https://late-dev-71e6.menghok-sok.workers.dev/'
 ```
 - `base_url`: BASE_URL to use in project.
 
+### Step Enum: Get PaymentObjectList
+```sh
+curl --location '${BASE_URL}/api/enum'
+```
+**Response:**
+- { 
+  data :{ 
+  `PaymentObjectList`: [
+      {
+        "_id": "69467daca01bcc5d890278e8",
+        "id": 1,
+        "title": "ABA PAY",
+        "description": "Tap to pay with ABA Mobile",
+        "logo": "https://web-api.cambolink21express.com/images/payments/aba.png",
+        "key": "ABA",
+        "status": "ACTIVE",
+        "order": 1
+      },
+  }
+ }
+
 
 ### Step 0: POST Auth
 ```sh
@@ -37,6 +58,7 @@ curl --location '${BASE_URL}/api/v1/users/sign-up'
 
 **Response:**
 - `token`: access token.
+
 
 ### Step 1: Get Available Locations
 ```sh
