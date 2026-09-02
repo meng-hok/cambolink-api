@@ -172,6 +172,9 @@ curl --location '${BASE_URL}/api/v1/tickets/checkout' \
 - `data`: List of bought tickets.
 - `checkout_transaction`: Object containing checkout information:
   - `_id`: Store as checkout_id to trigger in the next step.
+- `online_payment`
+  - `abapay_deeplink`: `open this deeplink for payment`
+  - `retry_url` : `redirect when user retry`
 
 ### Step 6: Inquiry Checkout ID
 ```sh
