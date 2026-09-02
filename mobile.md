@@ -1,13 +1,17 @@
-```sh
-base url = https://hok-proxy.acetoz.com/mobile/
-```
 **Header Required for All Endpoint:**
 - `x-forward-id = cambolink-app` (When move to production will changed )
 
 
+### Step 0: Load Base URL
+```sh
+curl --location 'https://late-dev-71e6.menghok-sok.workers.dev/'
+```
+- `base_url`: BASE_URL to use in project.
+
+
 ### Step 0: POST Auth
 ```sh
-curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/users/[phone-number,e-mail,username]/sign-in'
+curl --location '${BASE_URL}/api/v1/users/[phone-number,e-mail,username]/sign-in'
 ```
 
 **Request Parameters:**
@@ -21,7 +25,7 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/users/[phone-number,
 
 ### Step 0: Register User
 ```sh
-curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/users/sign-up'
+curl --location '${BASE_URL}/api/v1/users/sign-up'
 ```
 
 **Request Parameters:**
@@ -36,7 +40,7 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/users/sign-up'
 
 ### Step 1: Get Available Locations
 ```sh
-curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/locations'
+curl --location '${BASE_URL}/api/v1/locations'
 ```
 
 **Response:**
@@ -49,7 +53,7 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v1/locations'
 
 ### Step 2: Get Available Trips
 ```sh
-curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips?travel_date=2024-8-23&to_location=Phnom%20Penh&from_location=Poi%20Pet&intf=bookaway'
+curl --location '${BASE_URL}/api/v2/trips?travel_date=2024-8-23&to_location=Phnom%20Penh&from_location=Poi%20Pet&intf=bookaway'
 ```
 **Request Parameters:**
 - `from_location`: Departure location.
@@ -81,7 +85,7 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips?travel_date=20
 
 ### Step 2.1 (Optional): Get Trip Detail
 ```sh
-curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips/66975e901bbcb152fd71e2bf?from_location=Phnom%20Penh&to_location=Poi%20Pet'
+curl --location '${BASE_URL}/api/v2/trips/66975e901bbcb152fd71e2bf?from_location=Phnom%20Penh&to_location=Poi%20Pet'
 ```
 **Request Parameters:**
 - `from_location`: Departure location.
@@ -112,7 +116,7 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/trips/66975e901bbcb1
 
 ### Step 3: Pre-Checkout
 ```sh
-curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/tickets/checkout' \
+curl --location '${BASE_URL}/api/v1/tickets/checkout' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "trip_id": "64bb46a0bdcbe9b07865f9e1",
@@ -139,38 +143,31 @@ curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/tickets/checkout' \
 - `phone_number`: Client phone number.
 - `client_name`: Client name.
 - `gender`: Male or Female.
-
+- `pay_bank` : 
+- `coupon_discount_price`: 
 
 **Response:**
 - `data`: List of bought tickets.
 - `checkout_transaction`: Object containing checkout information:
   - `_id`: Store as checkout_id to trigger in the next step.
 
-### Step 4: Confirm from Response Checkout ID
+### Step 6: Inquiry Checkout ID
 ```sh
-curl --location 'https://hok-proxy.acetoz.com/mobile/api/v2/tickets/trigger' \
---header 'Content-Type: application/json' \
---data '{
-    "status": "CANCEL", // or "APPROVE"
-    "checkout_id": "645137385582e93d1e2c2ba3"
-}'
+curl  '${BASE_URL}/api/v1/tickets/checkout/inquiry?checkout_id='
 ```
-**Request Parameters:**
-- `status`: 
-  - `APPROVE`: In case user has completed payment.
-  - `CANCEL`: In case payment was not successful.
-- `checkout_id`: ID obtained from STEP 3 (`checkout_transaction._id`).
-
+**Response:**
+- `success`: true / false
+ 
 ### Step 5: Get Ticket Following Checkout ID
 ```sh
-curl 'https://hok-proxy.acetoz.com/mobile/api/v1/tickets?checkout_id='
+curl '${BASE_URL}/api/v1/tickets?checkout_id='
 ```
 **Request Parameters:**
 - `checkout_id`: ID obtained from STEP 3 (`checkout_transaction._id`).
 
 ### Check Coupon
 ```sh
-curl 'https://hok-proxy.acetoz.com/mobile/api/v1/coupons/check?coupon_code=hahaha'
+curl '${BASE_URL}/api/v1/coupons/check?coupon_code=hahaha'
 ```
 **Request Parameters:**
 - `coupon_code`: Coupon code to check (e.g., "hahaha").
