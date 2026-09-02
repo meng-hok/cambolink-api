@@ -2,7 +2,7 @@
 base url = https://hok-proxy.acetoz.com/mobile/
 ```
 **Header Required for All Endpoint:**
-- `x-forward-id = cambolink-website` (When move to production will changed )
+- `x-forward-id = cambolink-app` (When move to production will changed )
 
 
 ### Step 0: POST Auth
