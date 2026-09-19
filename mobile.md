@@ -176,6 +176,44 @@ curl --location '${BASE_URL}/api/v1/tickets/checkout' \
   - `abapay_deeplink`: `open this deeplink for payment`
   - `retry_url` : `redirect when user retry`
 
+**SAMPLE Round trip:**
+ {
+   trip_id: '68777601f7c0fa683a71f402',
+   trip_info_id: '67bea677dc4d47598e0cd016',
+   from_location: 'ភ្នំពេញ-HQ',
+   to_location: 'សៀមរាប',
+   price: { currency: 'USD', value: '13.25' },
+   total_price: { currency: 'USD', value: 13.25 },
+   seat_no: [ 'A5' ],
+   status: 'PAID',
+   coupon: '',
+   email: 'info@cambolink.com',
+   phone_number: '85589319402',
+   client_name: 'Menghok SOK',
+   aba_id: '',
+   gender: 'MALE',
+   passenger_genders: { A5: 'MALE' },
+   second_round_ticket: {
+     trip_id: '69bd6daa2883a867a99a71de',
+     trip_info_id: '67bec1b3dc4d47598e1d022a',
+     from_location: 'សៀមរាប',
+     to_location: 'ភ្នំពេញ-HQ',
+     price: { currency: 'USD', value: '13.25' },
+     total_price: { currency: 'USD', value: 13.25 },
+     seat_no: [ 'A1' ],
+     status: 'PAID',
+     coupon: '',
+     email: 'info@cambolink.com',
+     phone_number: '855983814920',
+     client_name: 'Menghok SOK',
+     aba_id: '',
+     gender: 'MALE',
+     passenger_genders: { A1: 'MALE' }
+   },
+   pay_bank: '3',
+   client_transaction: 1789830201
+ }
+
 ### Step 6: Inquiry Checkout ID
 ```sh
 curl  '${BASE_URL}/api/v1/tickets/checkout/inquiry?checkout_id='
